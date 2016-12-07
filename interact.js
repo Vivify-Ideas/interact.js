@@ -197,7 +197,7 @@
                 else {
                   vx = vy = options.speed
                 }
- 
+
                 sx = vx * dtx;
                 sy = vy * dty;
 
@@ -3247,7 +3247,7 @@
         }
 
         // if it's a mouse interaction
-        if (mouseEvent || !(supportsTouch || supportsPointerEvent)) {
+        if (mouseEvent || !supportsTouch || supportsPointerEvent) {
 
             // find a mouse interaction that's not in inertia phase
             for (i = 0; i < len; i++) {
@@ -4486,7 +4486,7 @@
          |     relativePoints: [
          |         { x: 0, y: 0 },  // snap relative to the top left of the element
          |         { x: 1, y: 1 },  // and also to the bottom right
-         |     ],  
+         |     ],
          |
          |     // offset the snap target coordinates
          |     // can be an object with x/y or 'startCoords'
